@@ -1,2 +1,48 @@
 for i in range(500):
     print("W SKANE ",end="")
+
+import pygame
+import sys
+
+# Initialize Pygame
+pygame.init()
+
+# Game Setup
+WIDTH, HEIGHT = 800, 600
+SCREEN = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("My Pygame Game")
+
+CLOCK = pygame.time.Clock()
+FPS = 60
+
+# Colors (RGB tuples)
+WHITE = (255, 255, 255)
+BLACK = (0, 0, 0)
+RED = (255, 0, 0)
+
+# Game loop
+running = True
+while running:
+    # Event handling
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Game logic (update game state)
+    # Example: move a player, check for collisions, etc.
+
+    # Drawing
+    SCREEN.fill(BLACK)  # Fill background with black
+
+    # Example: draw a red rectangle
+    pygame.draw.rect(SCREEN, RED, (50, 50, 100, 100))
+
+    # Update the display
+    pygame.display.flip()  # Or pygame.display.update()
+
+    # Control frame rate
+    CLOCK.tick(FPS)
+
+# Quit Pygame
+pygame.quit()
+sys.exit()
